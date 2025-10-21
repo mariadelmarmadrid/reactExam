@@ -31,6 +31,10 @@ export default function MovieCard({ movie, action }) {
     addToFavorites(movie);
   };
 
+ 
+
+  const formattedDate = new Date(movie.release_date).toLocaleString(undefined, {day: '2-digit', month: 'short', year: '2-digit'});
+
 
   return (
     <Card>
@@ -62,7 +66,7 @@ export default function MovieCard({ movie, action }) {
           <Grid size={{ xs: 6 }}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
-              {movie.release_date}
+              {formattedDate}
             </Typography>
           </Grid>
           <Grid size={{ xs: 6 }}>
